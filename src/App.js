@@ -13,10 +13,36 @@ import ETHDomains from './abis/ETHDomains.json';
 import config from './config.json';
 
 function App() {
-
-  const [account, setAccount] = useState(null)
+  const [provider, setProvider] = useState(null);
+  const [account, setAccount] = useState(null);
+  const [ethDomains, setEthDomains] = useState(null);
+  const [domains, setDomains] = useState([]);
 
   const loadBlockchainData = async () => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    setProvider(provider);
+
+    const network = await provider.getNetwork();
+    console.log("network", network);
+
+    const ethDomains = new ethers.Contract(
+      config[network.chainId].ETHDomains.address,
+      ETHDomains,
+      provider    
+    );
+    setEthDomains(ethDomains);
+
+    const maxSupply = await ethDomains.maxSupply();
+
+    const domains = [];
+    for (let i = 1; i <= maxSupply; i++) {
+      const domain = await ethDomains.getDomains(i);
+      domains.push(domain);
+    }
+
+    setDomains(domains);
+    console.log("domains", domains);
+
     window.ethereum.on("accountsChanged", async () => {
       const accounts = await window.ethereum.request({"method": "eth_requestAccounts"});
       const account = ethers.utils.getAddress(accounts[0]);
@@ -42,7 +68,17 @@ function App() {
         </p>
 
         <hr/>
-        <div className='cards'></div>
+        <div className='cards'>
+          {domains.map((domain, index) => (
+            <Domain 
+              domain = {domain} 
+              ethDomains = {ethDomains} 
+              provider = {provider} 
+              id = {index + 1} 
+              key = {index}
+            />
+          ))}
+        </div>
 
       </div>
 
