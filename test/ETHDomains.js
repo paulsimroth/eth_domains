@@ -50,12 +50,27 @@ describe("ETHDomains", () => {
       expect(domain.name).to.equal("jack.eth");
       expect(domain.price).to.equal(tokens(5));
       expect(domain.isOwned).to.equal(false);
-    })
+    });
 
     it("returns max supply", async () => {
       const result = await ethDomains.maxSupply();
       expect(result).to.equal(1);
+    });
+  });
+
+  describe("Minting", () => {
+    const ID = 1;
+    const AMOUNT = tokens(5);
+
+    beforeEach(async () => {
+      const transaction = await ethDomains.connect(owner1).mint(ID);
+      await transaction.wait();
     })
-  })
+
+    it("updates owner", async () => {
+      const owner = await ethDomains.ownerOf(ID)
+      expect(owner).to.equal(owner1.address);
+    });
+  });
 
 })

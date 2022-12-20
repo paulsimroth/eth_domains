@@ -35,6 +35,10 @@ contract ETHDomains is ERC721 {
         domainId[maxSupply] = Domain(domainName, domainPrice, false);
     }
 
+    function mint(uint256 id) public {
+        _safeMint(msg.sender, id);
+    }
+
     function getDomains(uint256 id) public view returns (Domain memory) {
         return domainId[id];
     }
