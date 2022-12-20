@@ -1,6 +1,7 @@
 # ETH Domain Platform
 
 This project was done following the tutorial by "DApp University" which you can find here: [YouTube](https://www.youtube.com/watch?v=kUTdr1dStxA&list=PLk7ZYbFb3ivvE6VfcjVC3GLFKEc3dxF3u&index=80)
+<br/>
 Here is the code the tutorial started from: [GitHub Repo](https://github.com/dappuniversity/eth_daddy/tree/starter_code)
 
 It is a decentralized domain platform, inspired by GoDaddy and Ethereum Name Service.
