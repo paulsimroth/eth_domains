@@ -56,20 +56,40 @@ describe("ETHDomains", () => {
       const result = await ethDomains.maxSupply();
       expect(result).to.equal(1);
     });
+
+    it("returns total supply", async () => {
+      const result = await ethDomains.totalSupply();
+      expect(result).to.equal(0);
+    });
   });
 
   describe("Minting", () => {
     const ID = 1;
-    const AMOUNT = tokens(5);
+    const AMOUNT = ethers.utils.parseUnits("5", "ether");
 
     beforeEach(async () => {
-      const transaction = await ethDomains.connect(owner1).mint(ID);
+      const transaction = await ethDomains.connect(owner1).mint(ID, { value:  AMOUNT });
       await transaction.wait();
     })
 
     it("updates owner", async () => {
       const owner = await ethDomains.ownerOf(ID)
       expect(owner).to.equal(owner1.address);
+    });
+
+    it("updates domain status", async () => {
+      const domain = await ethDomains.getDomains(ID)
+      expect(domain.isOwned).to.equal(true);
+    });
+
+    it("updates contract balance", async () => {
+      const result = await ethDomains.getBalance()
+      expect(result).to.equal(AMOUNT);
+    });
+
+    it("returns new total supply", async () => {
+      const result = await ethDomains.totalSupply();
+      expect(result).to.equal(1);
     });
   });
 
