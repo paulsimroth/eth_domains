@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { ethers } from 'ethers'
+import { useEffect, useState } from 'react';
+import { ethers } from 'ethers';
 
 const Domain = ({ domain, ethDomains, provider, id }) => {
 
@@ -8,6 +8,6 @@ const Domain = ({ domain, ethDomains, provider, id }) => {
 
     </div>
   );
-}
+};
 
 export default Domain;
