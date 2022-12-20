@@ -19,6 +19,10 @@ describe("ETHDomains", () => {
     //Deploy Contract
     const ETHDomains = await ethers.getContractFactory("ETHDomains");
     ethDomains = await ETHDomains.deploy(NAME, SYMBOL);
+
+    //List Domains
+    const transaction = await ethDomains.connect(deployer).list("jack.eth", tokens(5));
+    await transaction.wait();
   });
 
   describe("Deployment", () => {
@@ -39,5 +43,19 @@ describe("ETHDomains", () => {
     })
 
   });
+
+  describe("Domain", () => {
+    it("returns domain attributes", async () => {
+      let domain = await ethDomains.domainId(1);
+      expect(domain.name).to.equal("jack.eth");
+      expect(domain.price).to.equal(tokens(5));
+      expect(domain.isOwned).to.equal(false);
+    })
+
+    it("returns max supply", async () => {
+      const result = await ethDomains.maxSupply();
+      expect(result).to.equal(1);
+    })
+  })
 
 })

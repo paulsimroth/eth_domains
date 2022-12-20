@@ -8,9 +8,6 @@
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [React.js](https://reactjs.org/) (Frontend Framework)
 
-## Requirements For Initial Setup
-- Install [NodeJS](https://nodejs.org/en/)
-
 ## Setting Up
 ### 1. Clone/Download the Repository
 
