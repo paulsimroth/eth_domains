@@ -16,7 +16,7 @@ contract ETHDomains is ERC721 {
     }
     
     //Mapping for IDs to Domains
-    mapping(uint256 => Domain) public domainId;
+    mapping(uint256 => Domain) domainId;
 
     //Only Owner modifier
     modifier onlyOwner() {
@@ -33,5 +33,9 @@ contract ETHDomains is ERC721 {
     function list(string memory domainName, uint256 domainPrice) public onlyOwner{
         maxSupply = maxSupply + 1;
         domainId[maxSupply] = Domain(domainName, domainPrice, false);
+    }
+
+    function getDomains(uint256 id) public view returns (Domain memory) {
+        return domainId[id];
     }
 }

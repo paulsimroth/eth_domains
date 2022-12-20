@@ -46,7 +46,7 @@ describe("ETHDomains", () => {
 
   describe("Domain", () => {
     it("returns domain attributes", async () => {
-      let domain = await ethDomains.domainId(1);
+      let domain = await ethDomains.getDomains(1);
       expect(domain.name).to.equal("jack.eth");
       expect(domain.price).to.equal(tokens(5));
       expect(domain.isOwned).to.equal(false);
