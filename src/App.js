@@ -7,7 +7,7 @@ import Search from './components/Search'
 import Domain from './components/Domain'
 
 // ABIs
-import ETHDaddy from './abis/ETHDaddy.json'
+import ETHDomains from './abis/ETHDomains.json'
 
 // Config
 import config from './config.json';
@@ -19,7 +19,7 @@ function App() {
 
       <div className='cards__section'>
 
-        <h2 className='cards__title'>Welcome to ETH Daddy</h2>
+        <h2 className='cards__title'>Welcome to ETH Domains</h2>
 
       </div>
 

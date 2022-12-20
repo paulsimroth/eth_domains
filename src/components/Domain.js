@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { ethers } from 'ethers'
 
-const Domain = ({ domain, ethDaddy, provider, id }) => {
+const Domain = ({ domain, ethDomains, provider, id }) => {
 
   return (
     <div className='card'>
