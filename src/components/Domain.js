@@ -3,6 +3,12 @@ import { ethers } from 'ethers';
 
 const Domain = ({ domain, ethDomains, provider, id }) => {
 
+  const buyHandler = async () => {
+    const signer = await provider.getSigner();
+    const tx = await ethDomains.connect(signer).mint(id, { value:  domain.price });
+    await tx.wait();
+  };
+
   return (
     <div className='card'>
       <div className='card__info'>
@@ -19,6 +25,7 @@ const Domain = ({ domain, ethDomains, provider, id }) => {
       <button
       type="button"
       className='card__button'
+      onClick={() => buyHandler()}
       >
         Buy it
       </button>
