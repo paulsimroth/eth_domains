@@ -119,4 +119,4 @@ describe("ETHDomains", () => {
     });
   });
 
-})
+});
