@@ -1,8 +1,11 @@
 # ETH Domain Platform
 
+This project was done following the tutorial by "DApp University" which you can find here: [YouTube](https://www.youtube.com/watch?v=kUTdr1dStxA&list=PLk7ZYbFb3ivvE6VfcjVC3GLFKEc3dxF3u&index=80)
+
+It is a decentralized domain platform, inspired by GoDaddy and Ethereum Name Service.
 ## Technology Stack & Tools
 
-- Solidity (Writing Smart Contracts & Tests)
+- Solidity (Writing Smart Contracts)
 - Javascript (React & Testing)
 - [Hardhat](https://hardhat.org/) (Development Framework)
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
