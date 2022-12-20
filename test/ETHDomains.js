@@ -93,4 +93,30 @@ describe("ETHDomains", () => {
     });
   });
 
+  describe("Withdrawing", () => {
+    const ID = 1;
+    const AMOUNT = ethers.utils.parseUnits("5", "ether");
+    let balanceBefore;
+
+    beforeEach(async () => {
+      balanceBefore = await ethers.provider.getBalance(deployer.address);
+
+      let transaction = await ethDomains.connect(owner1).mint(ID, { value: AMOUNT });
+      await transaction.wait();
+
+      transaction = await ethDomains.connect(deployer).withdraw();
+      await transaction.wait();
+    });
+
+    it("updates owner balance", async () => {
+      const balanceAfter = await ethers.provider.getBalance(deployer.address);
+      expect(balanceAfter).to.be.greaterThan(balanceBefore);
+    });
+
+    it("updates contract balance", async () => {
+      const result = await ethDomains.getBalance();
+      expect(result).to.equal(0);
+    });
+  });
+
 })
