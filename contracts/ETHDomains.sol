@@ -18,13 +18,19 @@ contract ETHDomains is ERC721 {
     //Mapping for IDs to Domains
     mapping(uint256 => Domain) public domainId;
 
+    //Only Owner modifier
+    modifier onlyOwner() {
+        require(msg.sender == owner, "msg.sender is not authorized");
+        _;
+    }
+
     constructor(string memory _name, string memory _symbol) 
         ERC721(_name, _symbol)
     {
         owner = msg.sender;
     }
 
-    function list(string memory domainName, uint256 domainPrice) public {
+    function list(string memory domainName, uint256 domainPrice) public onlyOwner{
         maxSupply = maxSupply + 1;
         domainId[maxSupply] = Domain(domainName, domainPrice, false);
     }
