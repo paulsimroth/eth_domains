@@ -25,7 +25,7 @@ function App() {
     const network = await provider.getNetwork();
 
     const ethDomains = new ethers.Contract(
-      config[network.chainId].ETHDomains.address,
+      "0x840cdfAd5015C43C6881Bd57E59639c0544eeb5b" ,
       ETHDomains,
       provider    
     );

@@ -1,7 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 
 /** @type import('hardhat/config').HardhatUserConfig */
-const mnemonic = require("./secret.json").secret;
+const key = require("./secret.json").secret;
 const infuraKey = require("./secret.json").infura;
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
   networks: {
     goerli: {
       url: `https://goerli.infura.io/v3/${infuraKey}`,
-      accounts: [mnemonic]
+      accounts: [key]
     }
   }
 };
