@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/eth_domains/static/css/main.06333a81.css",
-    "main.js": "/eth_domains/static/js/main.40f122d7.js",
-    "static/js/787.90d1387c.chunk.js": "/eth_domains/static/js/787.90d1387c.chunk.js",
-    "static/media/browser.svg": "/eth_domains/static/media/browser.ae133d084b5141765918.svg",
-    "index.html": "/eth_domains/index.html",
-    "static/media/logo.svg": "/eth_domains/static/media/logo.4d5d0a83260f5109865dc35dc3e994af.svg",
-    "main.06333a81.css.map": "/eth_domains/static/css/main.06333a81.css.map",
-    "main.40f122d7.js.map": "/eth_domains/static/js/main.40f122d7.js.map",
-    "787.90d1387c.chunk.js.map": "/eth_domains/static/js/787.90d1387c.chunk.js.map"
+    "main.css": "/eth-domains/static/css/main.1d3b8701.css",
+    "main.js": "/eth-domains/static/js/main.6b3b3749.js",
+    "static/js/787.90d1387c.chunk.js": "/eth-domains/static/js/787.90d1387c.chunk.js",
+    "static/media/browser.svg": "/eth-domains/static/media/browser.ae133d084b5141765918.svg",
+    "index.html": "/eth-domains/index.html",
+    "static/media/logo.svg": "/eth-domains/static/media/logo.4d5d0a83260f5109865dc35dc3e994af.svg",
+    "main.1d3b8701.css.map": "/eth-domains/static/css/main.1d3b8701.css.map",
+    "main.6b3b3749.js.map": "/eth-domains/static/js/main.6b3b3749.js.map",
+    "787.90d1387c.chunk.js.map": "/eth-domains/static/js/787.90d1387c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.06333a81.css",
-    "static/js/main.40f122d7.js"
+    "static/css/main.1d3b8701.css",
+    "static/js/main.6b3b3749.js"
   ]
 }
