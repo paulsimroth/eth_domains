@@ -25,8 +25,8 @@ async function main() {
   console.log(`Deployed Domain Contract at: ${ethDomains.address} \n`);
   
   // List 6 domains
-  const names = ["jack.eth", "paul.eth", "henry.eth", "michael.eth", "oxygen.eth", "raphael.eth"];
-  const costs = [tokens(10), tokens(25), tokens(15), tokens(2.5), tokens(3), tokens(1)];
+  const names = ["jack.eth", "paul.eth", "henry.eth", "michael.eth", "oxygen.eth", "raphael.eth", "anna.eth"];
+  const costs = [tokens(10), tokens(25), tokens(14), tokens(3.5), tokens(3), tokens(8), tokens(20)];
 
   for (var i = 0; i < 6; i++) {
     const transaction = await ethDomains.connect(deployer).list(names[i], costs[i]);

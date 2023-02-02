@@ -4,7 +4,8 @@ This project was done following the tutorial by "DApp University" which you can 
 <br/>
 Here is the code the tutorial started from: [GitHub Repo](https://github.com/dappuniversity/eth_daddy/tree/starter_code)
 
-It is a decentralized domain platform, inspired by GoDaddy and Ethereum Name Service.
+It is a decentralized domain platform, inspired by GoDaddy and Ethereum Name Service and shows different domains that can be purchased. 
+
 ## Technology Stack & Tools
 
 - Solidity (Writing Smart Contracts)
