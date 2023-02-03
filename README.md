@@ -5,7 +5,7 @@ This project was done following the tutorial by "DApp University" which you can 
 Here is the code the tutorial started from: [GitHub Repo](https://github.com/dappuniversity/eth_daddy/tree/starter_code)
 
 It is a decentralized domain platform, inspired by GoDaddy and Ethereum Name Service and shows different domains that can be purchased.
-The project is now deployed on Goerli Testnet
+The project is now deployed on Goerli Testnet.
 
 ## Technology Stack & Tools
 
@@ -14,6 +14,22 @@ The project is now deployed on Goerli Testnet
 - [Hardhat](https://hardhat.org/) (Development Framework)
 - [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
 - [React.js](https://reactjs.org/) (Frontend Framework)
+
+## How it works
+
+If you want to try it out yourself follow this [Link](https://paulsimroth.github.io/eth_domains/)
+
+If you want to clone the repo and use it in your local environment follow these steps.
+
+1. clone this repository
+2. make sure you installed all dependencies:
+```$ npm install```
+3. start your local hardhat node: 
+```$ npx hardhat node```
+4. deploy the contract: 
+```$ npx hardhat run ./scripts/deploy.js --network localhost```
+5. start frontend:
+```npm run start```
 
 ## Disclaimer
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
